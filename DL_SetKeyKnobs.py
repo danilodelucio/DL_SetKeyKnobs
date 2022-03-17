@@ -14,7 +14,7 @@
 import nuke
 
 main_list = []
-icon_path = 'D:/OneDrive/DEV/DL_SetKeyKnobs/key_icon.png'
+icon_path = './DL_SetKeyKnobs/key_icon.png'
 
 def getKnobs():
     global node_name, knob_name, knob_value, main_list
