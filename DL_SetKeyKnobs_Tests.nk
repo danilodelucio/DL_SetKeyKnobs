@@ -1,0 +1,200 @@
+#! C:/Program Files/Nuke12.1v2/nuke-12.1.2.dll -nx
+version 12.1 v2
+define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
+<layout version="1.0">
+    <window x="0" y="0" w="1917" h="1008" screen="0">
+        <splitter orientation="1">
+            <split size="40"/>
+            <dock id="" hideTitles="1" activePageId="Toolbar.1">
+                <page id="Toolbar.1"/>
+            </dock>
+            <split size="1254" stretch="1"/>
+            <splitter orientation="2">
+                <split size="565"/>
+                <dock id="" activePageId="Viewer.1">
+                    <page id="Viewer.1"/>
+                </dock>
+                <split size="398"/>
+                <dock id="" activePageId="DAG.1" focus="true">
+                    <page id="DAG.1"/>
+                    <page id="Curve Editor.1"/>
+                    <page id="DopeSheet.1"/>
+                </dock>
+            </splitter>
+            <split size="615"/>
+            <dock id="" activePageId="Properties.1">
+                <page id="Properties.1"/>
+                <page id="uk.co.thefoundry.backgroundrenderview.1"/>
+                <page id="uk.co.thefoundry.scripteditor.1"/>
+            </dock>
+        </splitter>
+    </window>
+</layout>
+}
+Root {
+ inputs 0
+ name D:/OneDrive/DEV/DL_SetKey/DL_SetKeys_Tests.nk
+ project_directory "\[python \{nuke.script_directory()\}]"
+ frame 92
+ fps 23.976
+ format "1920 1080 0 0 1920 1080 1 HD_1080"
+ proxy_type scale
+ proxy_format "1024 778 0 0 1024 778 1 1K_Super_35(full-ap)"
+ colorManagement Nuke
+ workingSpaceLUT linear
+ monitorLut sRGB
+ int8Lut sRGB
+ int16Lut sRGB
+ logLut Cineon
+ floatLut linear
+}
+Viewer {
+ inputs 0
+ frame 92
+ frame_range 1-100
+ fps 23.97602463
+ name Viewer1
+ xpos -33
+ ypos 93
+}
+Blur {
+ inputs 0
+ channels alpha
+ size {2.5}
+ mix {1}
+ name Blur1
+ xpos -45
+ ypos -144
+}
+Roto {
+ inputs 0
+ output alpha
+ cliptype none
+ curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 2097152}
+    {t x44700000 x44070000}
+    {a opc
+   {{x41e80000 1 -}
+    {x42300000}
+    {x42680000}
+    {x42a20000}}    ff
+   {{x41e80000 1 -}
+    {x42300000}
+    {x42680000}
+    {x42a20000}}    pt1x 0 pt1y 0 pt2x 0 pt2y 0 pt3x 0 pt3y 0 pt4x 0 pt4y 0 ptex00 0 ptex01 0 ptex02 0 ptex03 0 ptex10 0 ptex11 0 ptex12 0 ptex13 0 ptex20 0 ptex21 0 ptex22 0 ptex23 0 ptex30 0 ptex31 0 ptex32 0 ptex33 0 ptof1x 0 ptof1y 0 ptof2x 0 ptof2y 0 ptof3x 0 ptof3y 0 ptof4x 0 ptof4y 0 pterr 0 ptrefset 0 ptmot x40800000 ptref 0}
+    {curvegroup Ellipse1 512 bezier
+     {{cc
+       {f 8192}
+       {px x42a20000
+        {xc3626fce 0}
+        {x440e5998 x432afffc}
+        {x43626fd0 0}
+        {0 xc35150df}
+        {x4474d998 x44097ffe}
+        {0 x435150e0}
+        {x43626fd0 0}
+        {x440e5998 x44683ffe}
+        {xc3626fce 0}
+        {0 x435150e0}
+        {x431f6660 x44097ffe}
+        {0 xc35150df}}}
+      {cc
+       {f 8192}
+       {px x42a20000
+        {xc3626fce 0}
+        {0 0}
+        {x43626fd0 0}
+        {0 xc35150df}
+        {0 0}
+        {0 x435150e0}
+        {x43626fd0 0}
+        {0 0}
+        {xc3626fce 0}
+        {0 x435150e0}
+        {0 0}
+        {0 xc35150df}}}}
+     {tx x42a20000 x44160000 x43e88000}
+     {a opc
+   {{x41e80000 1 -}
+    {x42380000}
+    {x42860000}
+    {x42b80000}}     ff
+   {{x41e80000 1 -}
+    {x42380000}
+    {x42860000}
+    {x42b80000}}     osw x41200000 osf 0 str 1 spx x44700000 spy x44070000 sb 1 ltn x42a20000 ltm x42a20000 tt x40e00000}}}}}}
+ toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 tt 5 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 tt 6 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 tt 7 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+ toolbar_brush_hardness 0.200000003
+ toolbar_source_transform_scale {1 1}
+ toolbar_source_transform_center {960 540}
+ colorOverlay {0 0 0 0}
+ opacity {{curve x29 1 x46 1 x67 1 x92 1}}
+ lifetime_type "all frames"
+ lifetime_start 81
+ lifetime_end 81
+ motionblur_shutter_offset_type centred
+ feather_falloff {{curve x29 1 x46 1 x67 1 x92 1}}
+ source_black_outside true
+ name Roto1
+ xpos 125
+ ypos -234
+}
+ColorCorrect {
+ inputs 0
+ saturation {{curve x1 0.29 x7 0.29 x29 0.29 x64 0.29 x75 0.29 0.29 x92 0.29}}
+ contrast {{curve x1 0.64}}
+ gain {1.85}
+ offset {{curve x7 0.17}}
+ shadows.saturation {{curve x1 2.3}}
+ shadows.contrast {0.46}
+ shadows.gamma 1.55
+ shadows.gain {{curve x7 0.29}}
+ shadows.offset {{curve x1 0 x7 0}}
+ midtones.contrast 1.65
+ midtones.gamma {0.56}
+ midtones.gain 1.4
+ midtones.offset 0.15
+ highlights.saturation {1}
+ highlights.gain {3.15}
+ highlights.offset {-0.44}
+ name ColorCorrect1_X
+ xpos -10
+ ypos -218
+}
+Grade {
+ inputs 0
+ blackpoint {{curve x29 -0.014 x64 -0.014 x75 -0.014 -0.014 x92 -0.014}}
+ whitepoint 1.1
+ name Grade1
+ xpos -180
+ ypos -168
+}
+Camera2 {
+ inputs 0
+ translate {0 0 1235}
+ rotate {{curve x29 29 x64 29 x75 29 29 x92 29} {curve x29 4656 x64 4656 x75 4656 4656 x92 4656} {curve x29 6454 x64 6454 x75 6454 6454 x92 6454}}
+ uniform_scale {1}
+ name Camera1_DL
+ xpos -121
+ ypos -269
+}
