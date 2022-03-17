@@ -72,6 +72,7 @@ def showKnobs():
 # DL_SetKeyKnobs button on Menu Animation
 nuke.menu('Animation').addCommand('DL_SetKeyKnobs', 'getKnobs()', icon = icon_path)
 
+# DL_SetKeyKnobs button on Toolbar
 skn_menu = nuke.menu('Nodes').addMenu('DL_SetKeyKnobs', icon = icon_path)
 skn_menu.addCommand('Set Keyframes for registered knobs', 'setKeys()', 'ctrl+alt+k')
 skn_menu.addCommand('Show Knobs registered', 'showKnobs()')
