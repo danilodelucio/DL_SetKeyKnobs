@@ -43,6 +43,10 @@ directory when you are setting in your <strong>"init.py"</strong>.
  
  The Tool will be generated on your Toolbar, and you can use it temporarily while your Nuke is open.
  
+ <blockquote>
+ Probably the icon image should not appear in your Menu Animation and Toolbar either.
+ </blockquote>
+ 
  --------------------------------------------------------------------------------------------------------
 <strong>
 Author: Danilo de Lucio
